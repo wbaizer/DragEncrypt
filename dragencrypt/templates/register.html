@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block tags %}
+	<link href='/css/login.css' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block content %}
+	<div class="login-wrapper">
+		<h3>Register</h3>
+		
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+		    {% for message in messages %}
+		      <p class="flash-paragraph">{{ message }}</p>
+		    {% endfor %}
+		  {% endif %}
+		{% endwith %}
+
+		<p>Register an account to manage <br>your encryption keys. It won't<br>take more than a minute!</p>
+		<form action="/register" method="POST">
+			<input class="login-text" type="text" name="email" placeholder="Email"/><br>
+			<input class="login-text" type="password" name="password" placeholder="Password"/><br>
+			<input class="login-text" type="password" name="confirm-password" placeholder="Confirm password"/><br>
+			<input class="login-submit" type="submit" value=">>" />
+		</form>
+	</div>
+{% endblock %}

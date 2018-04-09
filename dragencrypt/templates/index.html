@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block tags %}
+	<script src="/scripts/dropzone.js"></script>
+	<script src="/scripts/aes.js"></script>
+	<script src="/scripts/uploader.js"></script>
+	<script src="/scripts/home.js"></script>
+
+	<link href='/css/home.css' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block content %}
+
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<div id="flash">
+	    {% for message in messages %}
+	      <p class="flash-paragraph">{{ message }}</p>
+	    {% endfor %}
+		</div>
+	  {% endif %}
+	{% endwith %}
+
+	<h2 class="content-subheader">On-demand encryption. Simple, secure, and free.<br>Just the way it should be.</h2>
+	<div class="file-drag-wrapper file-drag-wrapper-transition">
+		<p class="file-drag-instructions">Drag and drop your file here<br>to encrypt or decrypt it.</p>
+		<p class="file-drag-success">Drag and drop your file here<br>to encrypt or decrypt it.</p>
+	</div>
+
+	<div class="drag-encrypt-step2">
+		<div class="file-password-wrapper">
+			<div class="encryption-password-text-label">
+				We've generated a password for you. Feel free to enter your own!
+			</div>
+			<input class="encryption-password-text" type="text" name="encryption-password" placeholder="Encryption Password"/>
+<!-- 			<div class="encrpytion-password-strength-wrapper">
+				Your password would take <b>23 years, 2 months, and 12 days</b> to crack.
+			</div> -->
+		</div>
+		<div class="file-encrypt-button-wrapper">
+			<button class="file-encrypt-button">Encrypt</button>
+		</div>
+
+		<iframe id="file-download-iframe" style="display:none;"></iframe>
+	</div>
+
+	<div class="drag-encrypt-inprogress">
+		Uploading your file and processing it. 
+		<!-- Spinner generated from http://loading.io/loader/?use=eyJzaXplIjo2MCwic3BlZWQiOiIuOCIsImNiayI6IiMyYjkxYzQiLCJjMSI6IiNGRkZGRkYiLCJjMiI6IjMiLCJjMyI6IjciLCJjNCI6IjIwIiwiYzUiOiI1MDAiLCJjNiI6IjE1IiwidHlwZSI6ImRlZmF1bHQifQ== 
+		<style type='text/css'>@-webkit-keyframes uil-default-anim { 0% { opacity: 1} 100% {opacity: 0} }@keyframes uil-default-anim { 0% { opacity: 1} 100% {opacity: 0} }.uil-default-css > div:nth-of-type(1){-webkit-animation: uil-default-anim .8s linear infinite;animation: uil-default-anim .8s linear infinite;-webkit-animation-delay: -0.4s;animation-delay: -0.4s;}.uil-default-css { position: relative;background:none;width:200px;height:200px;}.uil-default-css > div:nth-of-type(2){-webkit-animation: uil-default-anim .8s linear infinite;animation: uil-default-anim .8s linear infinite;-webkit-animation-delay: -0.13333333333333336s;animation-delay: -0.13333333333333336s;}.uil-default-css { position: relative;background:none;width:200px;height:200px;}.uil-default-css > div:nth-of-type(3){-webkit-animation: uil-default-anim .8s linear infinite;animation: uil-default-anim .8s linear infinite;-webkit-animation-delay: 0.1333333333333333s;animation-delay: 0.1333333333333333s;}.uil-default-css { position: relative;background:none;width:200px;height:200px;}</style><div class='uil-default-css' style='transform:scale(0.6);'><div style='top:80px;left:93px;width:14px;height:40px;background:#FFFFFF;-webkit-transform:rotate(0deg) translate(0,-30px);transform:rotate(0deg) translate(0,-30px);border-radius:1000px;position:absolute;'></div><div style='top:80px;left:93px;width:14px;height:40px;background:#FFFFFF;-webkit-transform:rotate(120deg) translate(0,-30px);transform:rotate(120deg) translate(0,-30px);border-radius:1000px;position:absolute;'></div><div style='top:80px;left:93px;width:14px;height:40px;background:#FFFFFF;-webkit-transform:rotate(240deg) translate(0,-30px);transform:rotate(240deg) translate(0,-30px);border-radius:1000px;position:absolute;'></div></div>
+		-->
+	</div>
+
+	<div class="drag-encrypt-step3">
+		<p class="file-ready-paragraph"> Your file is ready for download.<br><span class="remember-key">Please remember your encryption key:</p>
+		<input class="encryption-password-text-confirm" type="text" readonly/></span>
+		<div class="file-download-button-wrapper">
+			<a download class="file-download-link"><button class="file-download-button">Download</button></a>
+		</div>
+	</div>
+{% endblock %}

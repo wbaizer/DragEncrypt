@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block tags %}
+    <link href='/css/login.css' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block content %}
+    <div class="login-wrapper">
+        {% if current_user.is_authenticated %}
+          Hi {{ current_user.email }}!
+        {% endif %}
+    </div>
+{% endblock %}

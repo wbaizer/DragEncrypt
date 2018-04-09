@@ -1,0 +1,39 @@
+@import "colors.scss";
+
+html, body {
+	margin: 0;
+	font-family: 'Exo', sans-serif;
+	background-color: rgba(32, 129, 187, 0.71);
+	color: white;
+
+	min-height: 100vh;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c5deea+0,066dab+100&0.87+0,0.71+100 */
+	background: linear-gradient(to bottom, rgba(39, 145, 195, 0.87) 0%, rgba(32, 129, 187, 0.71) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dec5deea', endColorstr='#b5066dab',GradientType=0 ); /* IE6-9 */
+}
+
+body {
+    margin-top: -20px;
+    padding-bottom: 20px;
+}
+
+.content-wrapper {
+	display: block;
+	margin: 50px auto 10px;
+	width: 70%;
+}
+
+.main-header-title {
+    text-align: center;
+    color: #EFEFEF;
+    position: relative;
+    padding-top: 30px;
+    top: 30px;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+
+.main-header-link {
+    text-decoration: none;
+}

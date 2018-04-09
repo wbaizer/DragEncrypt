@@ -1,0 +1,7 @@
+Flask
+Flask-login
+Flask-SQLAlchemy
+flask-bcrypt
+pycrypto
+gunicorn
+mysql-python

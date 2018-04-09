@@ -1,0 +1,40 @@
+@import "main.scss";
+
+.login-text, .login-submit {
+    font-size: 1.2em;
+    width: 350px;
+}
+
+.login-text {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0px;
+    border-radius: 4px;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.login-submit {
+	margin-top: 15px;
+    padding: 10px;
+    border: 0px;
+    background-color: $green;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .1s ease-in all;
+    &:hover {
+        background-color: rgba(141, 243, 141, 0.75);
+    }
+}
+
+.content-wrapper {
+	text-align: center;
+}
+
+.login-wrapper {
+    position: relative;
+    margin-top: 15%;
+}

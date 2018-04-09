@@ -1,0 +1,12 @@
+'''
+	DragEncrypt settings
+	Set upload and download folder. On most environments, this will likely be
+	uploads/ and downloads/. When deploying with wsgi and Apache, the path will 
+	be relative to root. Recommend using /srv/uploads and /srv/downloads and 
+	changing ownership of those folders to www-data:www-data.
+'''
+
+UPLOAD_FOLDER = "uploads/"
+DOWNLOAD_FOLDER = "downloads/"
+DATABASE_URI = 'mysql://root:root@localhost/dragencrypt'
+SECRET_KEY = 'super secret key'
